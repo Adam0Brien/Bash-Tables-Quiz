@@ -5,33 +5,6 @@ PASSWORD=""
 
 declare -A STORE_RESULTS # fake 2d array
 
-function Options(){  #####Take this out and login using the level in a user.txt file
-
-
-        CHOICE=0
-        until [ $CHOICE -ge 1 -a $CHOICE -le 2 ]
-        do
-            echo "Please choose either Student or Teacher Menu:"
-            echo "1. Student Menu"
-            echo "2. Teacher Menu"
-            read CHOICE
-
-            if [ $CHOICE == 1 ]
-            then
-                #login
-                studentOptions
-            elif [ $CHOICE == 2 ] 
-            then
-                #login
-                teacherOptions   
-            elif [ $CHOICE -lt 1 -o $CHOICE -gt 4 ]
-            then
-                echo "Choice must be 1,2,3 or 4 only"
-            fi
-        done
-}
-
-
 function login(){
     until [[ $USERNAME =~ ^[[:alnum:]]+$ ]]
     do
